@@ -9,6 +9,8 @@ import com.example.myapplication.databinding.ActivityKotlinAndroidExtensionsBind
 
 // import kotlinx.android.synthetic.main.activity_kotlin_android_extensions.*
 
+//android extensions ya no sirve, se ha actualizado a binding dejo el codigo para tenerlo anotado
+// y el nombre de la clase
 
 class KotlinAndroidExtensionsActivity : AppCompatActivity() {
 
