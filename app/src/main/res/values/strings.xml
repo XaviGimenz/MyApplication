@@ -21,6 +21,11 @@
     <string name="button_to_shared_preferences">8. To Shared Preferences</string>
     <string name="button_to_extension_functions">9. To extension Functions</string>
 
+    <string name="Button_intent_extras"> Intent With Extras</string>
+    <string name="Button_intent_flags"> Intent With Flags</string>
+    <string name="Button_intent_objects"> Intent With Objects</string>
+    <string name="button_back"> Back </string>
+
     <string name="Button_kat_id">Button by FindViewById</string>
     <string name="Button_kat">Button by KAT</string>
 
