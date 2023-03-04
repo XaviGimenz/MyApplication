@@ -3,6 +3,7 @@ package com.example.myapplication.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.myapplication.Models.Student
 import com.example.myapplication.databinding.ActivityIntentExtrasBinding
 
 class intentExtrasActivity : AppCompatActivity() {
@@ -14,8 +15,17 @@ class intentExtrasActivity : AppCompatActivity() {
         setContentView(binding.root)
         getIntentExtrasFromPreviousActivity()
         binding.buttonBack.setOnClickListener { goBack() }
+        getParcelableExtraFromPreviousActivity()
     }
-
+    private fun getParcelableExtraFromPreviousActivity(){
+        val student = intent.getParcelableExtra<Student>("student")
+        student?.let{
+            binding.textViewName.text = student.name
+            binding.textViewLastName.text = student.lastName
+            binding.textViewAge.text = "${student.age}"
+            binding.checkBoxDeveloper.isChecked = student.isDeveloper
+        }
+    }
     private fun getIntentExtrasFromPreviousActivity(){
 
         val name: String? = intent.getStringExtra("name")
@@ -33,5 +43,6 @@ class intentExtrasActivity : AppCompatActivity() {
     private fun goBack(){
         val intent = Intent(this, IntentsActivity::class.java)
         startActivity(intent)
+        finish()
     }
 }

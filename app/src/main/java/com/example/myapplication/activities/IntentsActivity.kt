@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import com.example.myapplication.Models.Student
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityIntentsBinding
 
@@ -28,13 +29,20 @@ class IntentsActivity : AppCompatActivity() {
         startActivity(intent)
 
     }
-    private fun goIntentFlags(){
-        val intent = Intent()
-        startActivity(intent)
 
+    private fun goIntentFlags(){
+        val intent = Intent(this, intentExtrasActivity::class.java)
+        //intent.flags = Intent.FLAG_ACTIVITY_NO_HISTORY // no guarda el activity en el stack
+        //intent.flags = Intent.FLAG_ACTIVITY_NO_ANIMATION // sin animacion
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK // borra el stack completo
+        startActivity(intent)
+        //finish() // cuando se lanza el intent, mata el activity evitando que entre en el stack
     }
+
     private fun goIntentObject(){
-        val intent = Intent()
+        val intent = Intent(this, intentExtrasActivity::class.java)
+        val student = Student("ALberto", "Santos", 24, isDeveloper = false)
+        intent.putExtra("student", student)
         startActivity(intent)
 
     }
