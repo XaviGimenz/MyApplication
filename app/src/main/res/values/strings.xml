@@ -25,6 +25,7 @@
     <string name="Button_intent_flags"> Intent With Flags</string>
     <string name="Button_intent_objects"> Intent With Objects</string>
     <string name="button_back"> Back </string>
+    <string name="button_take_picture"> Take a picture</string>
 
     <string name="Button_kat_id">Button by FindViewById</string>
     <string name="Button_kat">Button by KAT</string>
